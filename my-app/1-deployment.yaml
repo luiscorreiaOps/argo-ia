@@ -1,5 +1,4 @@
 apiVersion: apps/v1
-kind: apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
@@ -7,7 +6,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  rpelicas: 1
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -19,6 +18,5 @@ spec:
       containers:
       - name: nginx
         image: rickdevops/nginx:v0.1.0
-        resources:
         ports:
         - containerPort: 80
