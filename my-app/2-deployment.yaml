@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chaos
+  namespace: prod
+  labels:
+    app: chaos
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chaos
+  template:
+    metadata:
+      labels:
+        app: chaos
+    spec:
+      containers:
+      - name: chaos
+        image: rickdevops/chaos-api:latest
+        ports:
+        - containerPort: 8000
